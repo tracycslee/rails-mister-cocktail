@@ -1,0 +1,17 @@
+<!-- _navbar.html.erb -->
+<div class="navbar navbar-expand-sm">
+  <%= link_to "#", class: "navbar-logo" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+  <div class="navbar-right">
+    <form class="navbar-form" role="search">
+      <div class="input-group">
+        <input class="form-control" placeholder="Search for a cocktail" name="srch-term" id="srch-term" type="text">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+    <%= link_to "Add a new recipe" , cocktails_new_path, class: 'btn btn-primary' %>
+  </div>
+</div>

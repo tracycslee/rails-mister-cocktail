@@ -1,1 +1,17 @@
-<h1>No peeking...</h1>
+<!-- cocktails/index.html.erb -->
+<!-- must specify height for div, or else the picture will not be displayed -->
+<div class="banner" style="height: 400px; background-image: url(https://www.dineout.co.in/blog/wp-content/uploads/2016/12/Mumbai-blog-banner-1400x400px.jpg);"></div>
+<br>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4">
+        <%= link_to cocktail_path(cocktail) do  %>
+          <div class="card-category" style="background-image: url('https://www.isabeleats.com/wp-content/uploads/2018/02/spicy-tequila-sunrise-small-1.jpg')">
+            <%= cocktail.name%>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

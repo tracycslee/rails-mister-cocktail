@@ -1,0 +1,9 @@
+<!-- doses/new.html.erb -->
+<h1>Add a new ingredient for <%= @cocktail.name %>! </h1>
+<div class="banner" style="height: 300px; background-image: url(http://knockoutmag.com/wp-content/uploads/2013/08/ny-bars-banner.jpg);"></div>
+<br>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit %>
+<% end %>

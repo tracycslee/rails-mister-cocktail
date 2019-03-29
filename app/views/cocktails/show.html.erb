@@ -1,2 +1,30 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<!-- cocktail/show -->
+<h1><%= @cocktail.name.capitalize %></h1>
+<div class="cocktail-pic" style="height: 400px; background-image: url(https://www.isabeleats.com/wp-content/uploads/2018/02/spicy-tequila-sunrise-small-1.jpg);"></div>
+<!-- <div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @article.photo, height: 300, width: 400, crop: :fill %>')"></div> -->
+<div>
+  <h2>Recipe</h2>
+  <table class="table table-bordered">
+    <tbody>
+      <thead>
+        <th>Ingredient</th>
+        <th>Description</th>
+        <th>Action</th>
+      </thead>
+      <% @cocktail.doses.each do |dose| %>
+        <tr>
+          <td><%= dose.ingredient.name %></td>
+          <td><%= dose.description %></td>
+          <td>
+            <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fa fa-trash destroy_dose"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to "Add a new ingredient" , new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
