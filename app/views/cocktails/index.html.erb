@@ -7,7 +7,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-4">
         <%= link_to cocktail_path(cocktail) do  %>
-          <div class="card-category" style="background-image: url('https://www.isabeleats.com/wp-content/uploads/2018/02/spicy-tequila-sunrise-small-1.jpg')">
+          <div class="card-category" style="background-image: url(https://source.unsplash.com/collection/2469482/800x600/?sig=<%=rand(99)%>)">
             <%= cocktail.name%>
           </div>
         <% end %>
